@@ -1,5 +1,5 @@
 # Bubble Notes
-### CS 126: Final Project - Proposal
+#### CS 126: Final Project - Proposal
 
 
 For my final project, I plan on making post-it notes in the form of bubbles. It's a cross between bubble screen savers and digital sticky notes that computers have. 
