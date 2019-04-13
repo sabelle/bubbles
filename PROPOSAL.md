@@ -13,3 +13,5 @@ For my final project, I plan on making post-it notes in the form of bubbles. It'
 
 * Since these bubbles are supposed to double as sticky notes, they will also need to take in user text-input. There's an example on the openframworks forum I will follow
     * https://forum.openframeworks.cc/t/text-input-creating-words-by-entering-and-showing-on-screen/2846/2 
+    
+* Some additional features I want to add include changing bubble size/color, adding different movement options (a code mod suggested one where bubbles can all fall to the bottom of screen), add background music.
