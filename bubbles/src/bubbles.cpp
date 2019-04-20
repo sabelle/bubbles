@@ -9,11 +9,13 @@
 using namespace bubbles;
 
 void Bubbles::loadBubbles() {
-    ofSetColor(255, 0, 0, 127); 
-    ofDrawCircle(100, 100, 50);
-    
-    ofSetColor(350, 20, 150, 90);
-    ofDrawCircle(900, 200, 75);
+//    ofSetColor(255, 0, 0, 127);
+//    ofDrawCircle(100, 100, 50);
+//    ofFill();
+//    
+//    ofSetColor(350, 20, 150, 90);
+//    ofDrawCircle(900, 200, 75);
+//    ofFill();
 }
 
 

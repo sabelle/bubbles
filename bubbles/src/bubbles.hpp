@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include "ofGraphics.h"
+#include "ofxBox2dCircle.h"
 
 #endif /* bubbles_hpp */
 namespace bubbles {
