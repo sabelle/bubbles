@@ -21,13 +21,15 @@ the bubbles always have a black line from the center to edge. tried overriding o
 
 ##### 4/21/19
 - [ ] remove black radial(?) line on bubbles
-- [ ] make bubbles a variety of (consistent) colors and not an epilepsy-inducing disco fiasco > multiple methods?
+- [x] make bubbles a variety of (consistent) colors and not an epilepsy-inducing disco fiasco > multiple methods?
 - [ ] i was going to add something else but i forgot // placeholder
 
 
 - [ ] movement - have different settings of movement, random, simple, etc
     * from code review have option to have bubbles all fall to bottom of screen?
 - [ ] add text >> find a way to save text inputs - .txt files?
+
+each call to add a bubble adds 2 different colored bubbles at once -> had an issue where every 3 bubble calls would display color and inbetween it didn't work so this is the solutionbbb
 
 ##### 4/28/19
 - [ ] add background sound

@@ -8,7 +8,7 @@
 #include "bubbles.hpp"
 using namespace bubbles;
 
-void Bubbles::loadBubbles() {
+//void Bubbles::loadBubbles() {
 //    ofSetColor(255, 0, 0, 127);
 //    ofDrawCircle(100, 100, 50);
 //    ofFill();
@@ -16,7 +16,8 @@ void Bubbles::loadBubbles() {
 //    ofSetColor(350, 20, 150, 90);
 //    ofDrawCircle(900, 200, 75);
 //    ofFill();
-}
+//}
+
 
 
 //void ofDrawCircle(float x, float y, float radius);

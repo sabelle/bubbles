@@ -17,7 +17,17 @@ namespace bubbles {
     
 class Bubbles {
 public:
-    void loadBubbles();
+//    //class member variables
+//    b2Body* m_body;
+//    float m_radius;
+//    
+//public:
+//    Ball(b2World* world, float radius) {
+//        m_body = NULL;
+//        m_radius = radius;
+//    }
+//    ~Ball() {}
+    
 };
     
 }
