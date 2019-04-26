@@ -38,6 +38,7 @@ void Bubbles::draw() {
 //    ofSetColor(hexColors[count % hexColors.size()]);
 //    count++;
     //
+    //
     ofSetColor(0);
     ofDrawLine(0, 0, radius, 0);
     if(isSleeping()) {
@@ -49,8 +50,3 @@ void Bubbles::draw() {
     ofPopMatrix();
 }
 
-//std::vector<shared_ptr<ofxBox2dCircle> > getCircles() {
-//    return circles;
-//}
-
-//void ofDrawCircle(float x, float y, float radius);
