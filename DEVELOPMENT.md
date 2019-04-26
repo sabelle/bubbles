@@ -1,4 +1,4 @@
-# Project Development
+#bProject Development
 ## Bubble Notes
 
 
@@ -12,7 +12,7 @@ created some circles on a transparent fullscreen background
 ##### 4/14/19
 - [ ] ability to resize bubbles
 - [x] simple movement 
-- [ ] 3D (shading) bubbles - more realistic(?) than 2D
+- [ ] 3D (shading) bubbles - more realistic(?) than 2D 
 
 :sparkles: :sparkles: :sparkles: 
 added movement to bubbles using ofxBox2d, however bubble cannot be dragged around unless background is _not_ transparent. i set the gravity to 0 so that bubble can float freely, however the user must drag the first bubble (and subsequent bubbles if no collision occurs) to initiate movement. this obviously doesnt allow for a transparent screen, so the ofxTransparentWindow might need to go. 
