@@ -24,7 +24,13 @@ public:
     
 private:
     int count;
+    
     ofxBox2d box2d; // the box2d world
     std::vector<shared_ptr<ofxBox2dCircle> > circles; // default box2d circles
     std::vector<unsigned> hexColors {0xebdcf2, 0xf4df8b, 0xbbf7e3};
+
+    ofRectangle upGravityButton;
+    ofRectangle downGravityButton;
+    bool upGravityButtonClicked;
+    bool downGravityButtonClicked;
 };

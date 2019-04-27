@@ -11,11 +11,28 @@ void ofApp::setup(){
     box2d.createBounds();
     box2d.setFPS(60.0);
     box2d.registerGrabbing();
+    
+    upGravityButton.set(50, 50, 100, 50);
+    downGravityButton.set(155, 50, 100, 50);
+    upGravityButtonClicked = false;
+    downGravityButtonClicked = false;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     box2d.update();
+    
+    if (upGravityButtonClicked){
+        downGravityButtonClicked = false;
+        box2d.setGravity(0, -5);
+    } else if (downGravityButtonClicked) {
+        upGravityButtonClicked = false;
+        box2d.setGravity(0, 5);
+    } else {
+        upGravityButtonClicked = false;
+        downGravityButtonClicked = false;
+        box2d.setGravity(0, 0);
+    }
 }
 
 //--------------------------------------------------------------
@@ -28,6 +45,25 @@ void ofApp::draw(){
     }
     
     box2d.drawGround();
+    
+    
+    if (upGravityButtonClicked) {
+        ofFill();
+        ofSetColor(ofColor::lightGreen);
+    } else {
+        ofFill();
+        ofSetColor(ofColor::lightCoral);
+    }
+    ofDrawRectangle(upGravityButton);
+    
+    if (downGravityButtonClicked) {
+        ofFill();
+        ofSetColor(ofColor::lightGoldenRodYellow);
+    } else {
+        ofFill();
+        ofSetColor(ofColor::lightCoral);
+    }
+    ofDrawRectangle(downGravityButton);
 }
 
 //--------------------------------------------------------------
@@ -69,7 +105,14 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+    //https://gist.github.com/firmread/10641924
+    if (upGravityButton.inside(x, y)) {
+        upGravityButtonClicked = !upGravityButtonClicked;
+    }
     
+    if (downGravityButton.inside(x, y)) {
+        downGravityButtonClicked = !downGravityButtonClicked;
+    }
 }
 
 //--------------------------------------------------------------
