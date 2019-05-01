@@ -16,6 +16,7 @@ void ofApp::setup(){
     downGravityButton.set(155, 50, 100, 50);
     upGravityButtonClicked = false;
     downGravityButtonClicked = false;
+    shouldAddQuote = false;
 }
 
 //--------------------------------------------------------------
@@ -39,7 +40,7 @@ void ofApp::update(){
 void ofApp::draw(){
     //buttons
     ofFill();
-    if (upGravityButtonClicked) ofSetColor(ofColor::lightGreen);
+    if (upGravityButtonClicked) ofSetColor(ofColor::gold);
     else ofSetColor(ofColor::lightCoral);
     ofDrawRectangle(upGravityButton);
     
@@ -54,26 +55,36 @@ void ofApp::draw(){
     ofDrawBitmapString(upLabel, 92, 80);
     ofDrawBitmapString(downLabel, 186, 80);
     
-    //legend
-    string info = "key controls: \n[b] bubbles \n[s] squares \n[t] toggle";
-    ofSetHexColor(0x56534f);
-    ofDrawBitmapString(info, 50, 650);
-    
     //shapes
-    for(int i = 0; i < bubbles.size(); i++) {
+    for (int i = 0; i < bubbles.size(); i++) {
         count++;
         ofSetHexColor(hexColors[count % hexColors.size()]);
         ofFill();
         bubbles[i].get()->draw();
     }
     
-    for(int i = 0; i < squares.size(); i++) {
+    for (int i = 0; i < squares.size(); i++) {
         ofSetHexColor(0xcdd4d8);
         ofFill();
         squares[i].get()->draw();
-//        ofSetHexColor(0x56534f);
-//        ofDrawBitmapString(quoteCollection[0], 92, 80);
     }
+    
+    for (int i = 0; i < poems.size(); i++) {
+        ofSetColor(ofColor::lightCoral);
+        ofDrawBitmapString(poemCollection[poems[i]], poemLocations[i].first, poemLocations[i].second);
+    }
+    
+    //legend
+    string info =
+    "key controls:\n"
+    "[b] bubbles\n"
+    "[p] poems\n"
+    "[s] squares\n"
+    "[t] toggle\n"
+    "[x] clear";
+    
+    ofSetHexColor(0x56534f);
+    ofDrawBitmapString(info, 50, 650);
     
     //ground
     box2d.drawGround();
@@ -102,6 +113,13 @@ void ofApp::keyPressed(int key){
         bubbleParticle->setup(box2d.getWorld(), mouseX, mouseY, r);
     }
     
+    if (key == 'p') {
+        int randomPoem = ofRandom(0, poemCollection.size());
+        poems.push_back(randomPoem);
+        poemLocations.push_back(std::make_pair(mouseX, mouseY));
+        
+    }
+    
     if (key == 's') {
         float l = ofRandom(20, 40);
         squares.push_back(shared_ptr<ofxBox2dRect>(new ofxBox2dRect));
@@ -111,6 +129,12 @@ void ofApp::keyPressed(int key){
     
     if (key == 't') {
         ofToggleFullscreen();
+    }
+    
+    if (key == 'x') {
+        bubbles.clear();
+        poems.clear();
+        squares.clear();
     }
 }
 

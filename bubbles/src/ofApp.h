@@ -39,20 +39,52 @@ public:
     
 private:
     int count;
+    int currentX;
+    int currentY;
     
     ofxBox2d box2d; //box2d world
     std::vector<shared_ptr<ofxBox2dRect> > squares;
-    std::vector <shared_ptr<CustomParticle> > bubbles;
+    std::vector<shared_ptr<CustomParticle> > bubbles;
+    std::vector<int> poems;
+    std::vector<std::pair<int, int> > poemLocations;
     std::vector<unsigned> hexColors {0xebdcf2, 0xf4df8b, 0xbbf7e3};
-    std::vector<string> quoteCollection {
-        "be the change you want to see",
-        "do unto others as you would \nhave them do unto you",
-        "where there's a will, there's a way",
-        "seeker of truth \nfollow no paths \nall paths lead where \ntruth is here"
+    std::vector<string> poemCollection {
+        "seeker of truth\n\n"
+        "follow no paths\n"
+        "all paths lead where\n\n"
+        "truth is here",
+        
+        "love is a place\n"
+        "& through this place of\n"
+        "love move\n"
+        "(with brightness of peace)\n"
+        "all places\n\n"
+        "yes is a world\n"
+        "& in this world of\n"
+        "yes live\n"
+        "(skilfully curled)\n"
+        "all worlds",
+        
+        "a total stranger one black day\n"
+        "knocked living the hell out of me–\n\n"
+        "who found forgiveness hard because\n"
+        "my(as it happened)self he was\n\n"
+        "-but now that fiend and i are such\n"
+        "immortal friends the other’s each",
+        
+        "Me up at does\n\n"
+        "out of the floor\n"
+        "quietly Stare\n\n"
+        "a poisoned mouse\n\n"
+        "still who alive\n\n"
+        "is asking What\n"
+        "have i done that\n\n"
+        "You wouldn't have"
     };
 
     ofRectangle upGravityButton;
     ofRectangle downGravityButton;
     bool upGravityButtonClicked;
     bool downGravityButtonClicked;
+    bool shouldAddQuote;
 };

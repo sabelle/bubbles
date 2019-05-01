@@ -10,9 +10,7 @@
 created some circles on a transparent fullscreen background
 
 ##### 4/14/19
-- [ ] <del>ability to resize bubbles</del>
 - [x] simple movement 
-- [ ] <del>3D (shading) bubbles - more realistic(?) than 2D </del>
 
 :sparkles: :sparkles: :sparkles: 
 added movement to bubbles using ofxBox2d, however bubble cannot be dragged around unless background is _not_ transparent. i set the gravity to 0 so that bubble can float freely, however the user must drag the first bubble (and subsequent bubbles if no collision occurs) to initiate movement. this obviously doesnt allow for a transparent screen, so the ofxTransparentWindow might need to go. 
@@ -29,10 +27,7 @@ each call to add a bubble adds 3 different colored bubbles at once -> had an iss
 
 ##### 4/28/19
 - [x] remove black radial(?) line on bubbles
-- [ ] add text >> find a way to save text inputs - .txt files?
-- [ ] add background sound
-- [ ] add option to change bubble color?
-- [ ] some additional features?
+- [x] add text 
 
 :sparkles: :sparkles: :sparkles: 
-removed black line on the bubbles by creating custom shape (custom particle). labeled buttons. added squares and working on adding text in the form of quotes printed on screen
+removed black line on the bubbles by creating custom shape (custom particle). labeled buttons and added a new shape, squares. i chose to add poems as text! these are all poems by e. e. cummings, my favorite poet. added a clear screen functionality.
