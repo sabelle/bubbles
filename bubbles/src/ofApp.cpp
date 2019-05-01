@@ -14,6 +14,7 @@ void ofApp::setup(){
     
     upGravityButton.set(50, 50, 100, 50);
     downGravityButton.set(155, 50, 100, 50);
+    legend.set(50, 620, 135, 120);
     upGravityButtonClicked = false;
     downGravityButtonClicked = false;
     shouldAddQuote = false;
@@ -38,23 +39,6 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    //buttons
-    ofFill();
-    if (upGravityButtonClicked) ofSetColor(ofColor::gold);
-    else ofSetColor(ofColor::lightCoral);
-    ofDrawRectangle(upGravityButton);
-    
-    ofFill();
-    if (downGravityButtonClicked) ofSetColor(ofColor::gold);
-    else ofSetColor(ofColor::lightCoral);
-    ofDrawRectangle(downGravityButton);
-    
-    string upLabel = "up";
-    string downLabel = "down";
-    ofSetHexColor(0xffffff);
-    ofDrawBitmapString(upLabel, 92, 80);
-    ofDrawBitmapString(downLabel, 186, 80);
-    
     //shapes
     for (int i = 0; i < bubbles.size(); i++) {
         count++;
@@ -74,9 +58,29 @@ void ofApp::draw(){
         ofDrawBitmapString(poemCollection[poems[i]], poemLocations[i].first, poemLocations[i].second);
     }
     
+    //buttons
+    ofFill();
+    if (upGravityButtonClicked) ofSetColor(ofColor::gold);
+    else ofSetColor(ofColor::lightCoral);
+    ofDrawRectangle(upGravityButton);
+    
+    ofFill();
+    if (downGravityButtonClicked) ofSetColor(ofColor::gold);
+    else ofSetColor(ofColor::lightCoral);
+    ofDrawRectangle(downGravityButton);
+    
+    string upLabel = "up";
+    string downLabel = "down";
+    ofSetHexColor(0xffffff);
+    ofDrawBitmapString(upLabel, 92, 80);
+    ofDrawBitmapString(downLabel, 186, 80);
+    
     //legend
+    ofSetHexColor(0xe0f0f9);
+    ofDrawRectangle(legend);
+    
     string info =
-    "key controls:\n"
+    "key controls\n"
     "[b] bubbles\n"
     "[p] poems\n"
     "[s] squares\n"
@@ -84,7 +88,7 @@ void ofApp::draw(){
     "[x] clear";
     
     ofSetHexColor(0x56534f);
-    ofDrawBitmapString(info, 50, 650);
+    ofDrawBitmapString(info, 67, 650);
     
     //ground
     box2d.drawGround();

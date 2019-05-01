@@ -84,6 +84,7 @@ private:
 
     ofRectangle upGravityButton;
     ofRectangle downGravityButton;
+    ofRectangle legend;
     bool upGravityButtonClicked;
     bool downGravityButtonClicked;
     bool shouldAddQuote;
