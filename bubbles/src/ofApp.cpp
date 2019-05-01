@@ -37,55 +37,81 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    for(int i=0; i<circles.size(); i++) {
-        ofFill();
-        ofSetHexColor(hexColors[count % hexColors.size()]);
-        count++;
-        circles[i].get()->draw();
-    }
-    
-    box2d.drawGround();
-    
-    
-    if (upGravityButtonClicked) {
-        ofFill();
-        ofSetColor(ofColor::lightGreen);
-    } else {
-        ofFill();
-        ofSetColor(ofColor::lightCoral);
-    }
+    //buttons
+    ofFill();
+    if (upGravityButtonClicked) ofSetColor(ofColor::lightGreen);
+    else ofSetColor(ofColor::lightCoral);
     ofDrawRectangle(upGravityButton);
     
-    if (downGravityButtonClicked) {
-        ofFill();
-        ofSetColor(ofColor::lightGoldenRodYellow);
-    } else {
-        ofFill();
-        ofSetColor(ofColor::lightCoral);
-    }
+    ofFill();
+    if (downGravityButtonClicked) ofSetColor(ofColor::gold);
+    else ofSetColor(ofColor::lightCoral);
     ofDrawRectangle(downGravityButton);
+    
+    string upLabel = "up";
+    string downLabel = "down";
+    ofSetHexColor(0xffffff);
+    ofDrawBitmapString(upLabel, 92, 80);
+    ofDrawBitmapString(downLabel, 186, 80);
+    
+    //legend
+    string info = "key controls: \n[b] bubbles \n[s] squares \n[t] toggle";
+    ofSetHexColor(0x56534f);
+    ofDrawBitmapString(info, 50, 650);
+    
+    //shapes
+    for(int i = 0; i < bubbles.size(); i++) {
+        count++;
+        ofSetHexColor(hexColors[count % hexColors.size()]);
+        ofFill();
+        bubbles[i].get()->draw();
+    }
+    
+    for(int i = 0; i < squares.size(); i++) {
+        ofSetHexColor(0xcdd4d8);
+        ofFill();
+        squares[i].get()->draw();
+//        ofSetHexColor(0x56534f);
+//        ofDrawBitmapString(quoteCollection[0], 92, 80);
+    }
+    
+    //ground
+    box2d.drawGround();
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    if(key == 'b') {
+    if (key == 'b') {
         float r = ofRandom(40, 60);
-        circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));
-        circles.back().get()->setPhysics(2.0, 0.6, 0);
-        circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
+        bubbles.push_back(shared_ptr<CustomParticle>(new CustomParticle));
+        CustomParticle *bubbleParticle = bubbles.back().get();
+        bubbleParticle->setPhysics(2.0, 0.6, 0);
+        bubbleParticle->setup(box2d.getWorld(), mouseX, mouseY, r);
         
         r = ofRandom(40, 60);
-        circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));
-        circles.back().get()->setPhysics(2.0, 0.6, 0);
-        circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
-        
+        bubbles.push_back(shared_ptr<CustomParticle>(new CustomParticle));
+        bubbleParticle = bubbles.back().get();
+        bubbleParticle->setPhysics(2.0, 0.6, 0);
+        bubbleParticle->setup(box2d.getWorld(), mouseX, mouseY, r);
+
         r = ofRandom(40, 60);
-        circles.push_back(shared_ptr<ofxBox2dCircle>(new ofxBox2dCircle));
-        circles.back().get()->setPhysics(2.0, 0.6, 0);
-        circles.back().get()->setup(box2d.getWorld(), mouseX, mouseY, r);
+        bubbles.push_back(shared_ptr<CustomParticle>(new CustomParticle));
+        bubbleParticle = bubbles.back().get();
+        bubbleParticle->setPhysics(2.0, 0.6, 0);
+        bubbleParticle->setup(box2d.getWorld(), mouseX, mouseY, r);
     }
     
-    if(key == 't') ofToggleFullscreen();
+    if (key == 's') {
+        float l = ofRandom(20, 40);
+        squares.push_back(shared_ptr<ofxBox2dRect>(new ofxBox2dRect));
+        squares.back().get()->setPhysics(4.0, 0.6, 0.5);
+        squares.back().get()->setup(box2d.getWorld(), mouseX, mouseY, l, l);
+    }
+    
+    if (key == 't') {
+        ofToggleFullscreen();
+    }
 }
 
 //--------------------------------------------------------------

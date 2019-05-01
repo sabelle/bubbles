@@ -53,7 +53,6 @@
 		B334822A68480CC3F5518775 /* b2WorldCallbacks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DD6D1485B3CB75086F19472 /* b2WorldCallbacks.cpp */; };
 		B3CE14A42272E41F0021B7E0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3CE14A12272E41E0021B7E0 /* main.cpp */; };
 		B3CE14A52272E41F0021B7E0 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3CE14A32272E41F0021B7E0 /* ofApp.cpp */; };
-		B3CE14A82272E4470021B7E0 /* bubbles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3CE14A62272E4470021B7E0 /* bubbles.cpp */; };
 		BC527D11D0511E25560469E4 /* b2MouseJoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66F295247FC23B5BF5FA8741 /* b2MouseJoint.cpp */; };
 		C928AD163018452FD9C2F5C4 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E4B738DF457D316185CABB1 /* b2CollideCircle.cpp */; };
 		CC8ABF29E3B768B2B0BE45EF /* ofxBox2dRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD9DE5E0DD58B061508DBEB3 /* ofxBox2dRect.cpp */; };
@@ -163,8 +162,6 @@
 		B3CE14A12272E41E0021B7E0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B3CE14A22272E41F0021B7E0 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		B3CE14A32272E41F0021B7E0 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
-		B3CE14A62272E4470021B7E0 /* bubbles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bubbles.cpp; sourceTree = "<group>"; };
-		B3CE14A72272E4470021B7E0 /* bubbles.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bubbles.hpp; sourceTree = "<group>"; };
 		B457B0DACB80984C10A18DC6 /* b2Fixture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = b2Fixture.cpp; path = "../../openframeworks/addons/ofxBox2d-master/libs/Box2D/Dynamics/b2Fixture.cpp"; sourceTree = SOURCE_ROOT; };
 		B497EA72F063403440F22566 /* b2RevoluteJoint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = b2RevoluteJoint.cpp; path = "../../openframeworks/addons/ofxBox2d-master/libs/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp"; sourceTree = SOURCE_ROOT; };
 		B60CBA95F38604BAA60CE2C3 /* b2Timer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = b2Timer.h; path = "../../openframeworks/addons/ofxBox2d-master/libs/Box2D/Common/b2Timer.h"; sourceTree = SOURCE_ROOT; };
@@ -895,8 +892,6 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				B3CE14A62272E4470021B7E0 /* bubbles.cpp */,
-				B3CE14A72272E4470021B7E0 /* bubbles.hpp */,
 				B3CE14A12272E41E0021B7E0 /* main.cpp */,
 				B3CE14A32272E41F0021B7E0 /* ofApp.cpp */,
 				B3CE14A22272E41F0021B7E0 /* ofApp.h */,
@@ -1056,7 +1051,6 @@
 				9E675EA61D25E1EC789E733F /* b2EdgeAndCircleContact.cpp in Sources */,
 				6C7FD97B340AE66148673060 /* b2EdgeAndPolygonContact.cpp in Sources */,
 				89B00BCF794C6D47A80CCAD1 /* b2PolygonAndCircleContact.cpp in Sources */,
-				B3CE14A82272E4470021B7E0 /* bubbles.cpp in Sources */,
 				7BEDEEEBFB8267E2AD4D3717 /* b2PolygonContact.cpp in Sources */,
 				AD8A074E7D14B2D1825791DD /* b2DistanceJoint.cpp in Sources */,
 				EA2A2D90417A64A2B4135D04 /* b2FrictionJoint.cpp in Sources */,
