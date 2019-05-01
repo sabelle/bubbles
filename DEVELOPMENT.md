@@ -7,7 +7,9 @@
 - [x] have some circles ("bubbles")
 
 :sparkles: :sparkles: :sparkles: 
+
 created some circles on a transparent fullscreen background
+
 
 ##### 4/14/19
 - [x] simple movement 
@@ -23,11 +25,14 @@ the bubbles always have a black line from the center to edge. tried overriding o
     * from code review have option to have bubbles all fall to bottom of screen?
 
 :sparkles: :sparkles: :sparkles: 
+
 each call to add a bubble adds 3 different colored bubbles at once -> had an issue where every 3 bubble calls would display color and inbetween it didn't work so this is the solution. wasn't able to override method to remove black line on circle because the method is interwoven with a bunch of other methods so its just plain messy, will keep working on it. added buttons that change the physics in the program (diifferent gravities).
+
 
 ##### 4/28/19
 - [x] remove black radial(?) line on bubbles
 - [x] add text 
 
 :sparkles: :sparkles: :sparkles: 
+
 removed black line on the bubbles by creating custom shape (custom particle). labeled buttons and added a new shape, squares. i chose to add poems as text! these are all poems by e. e. cummings, my favorite poet. added a clear screen functionality.
