@@ -14,10 +14,11 @@ void ofApp::setup(){
     
     upGravityButton.set(50, 50, 100, 50);
     downGravityButton.set(155, 50, 100, 50);
-    legend.set(50, 620, 135, 120);
+    helpButton.set(50, 670, 135, 50);
+    
     upGravityButtonClicked = false;
     downGravityButtonClicked = false;
-    shouldAddQuote = false;
+    helpButtonClicked = false;
 }
 
 //--------------------------------------------------------------
@@ -60,35 +61,49 @@ void ofApp::draw(){
     
     //buttons
     ofFill();
-    if (upGravityButtonClicked) ofSetColor(ofColor::gold);
-    else ofSetColor(ofColor::lightCoral);
-    ofDrawRectangle(upGravityButton);
+    if (upGravityButtonClicked) ofSetHexColor(0xf29393);
+    else ofSetHexColor(0xf7c0c0);
+    ofRectRounded(upGravityButton, 5, 5, 5, 5);
     
-    ofFill();
-    if (downGravityButtonClicked) ofSetColor(ofColor::gold);
-    else ofSetColor(ofColor::lightCoral);
-    ofDrawRectangle(downGravityButton);
+    if (downGravityButtonClicked) ofSetHexColor(0xf29393);
+    else ofSetHexColor(0xf7c0c0);
+    ofRectRounded(downGravityButton, 5, 5, 5, 5);
     
-    string upLabel = "up";
-    string downLabel = "down";
-    ofSetHexColor(0xffffff);
-    ofDrawBitmapString(upLabel, 92, 80);
-    ofDrawBitmapString(downLabel, 186, 80);
     
     //legend
-    ofSetHexColor(0xe0f0f9);
-    ofDrawRectangle(legend);
+    string info = "";
+    if (helpButtonClicked) {
+        ofSetHexColor(0xbbe1f7);
+        ofRectRounded(helpButton, 5, 5, 5, 5);
+        
+        info =
+        "key controls\n"
+        "[b] bubbles\n"
+        "[p] poems\n"
+        "[s] squares\n"
+        "[t] toggle\n"
+        "[x] clear";
+        
+        ofSetHexColor(0x6d6a67);
+        ofDrawBitmapString(info, 67, 580);
+        
+    } else {
+        ofSetHexColor(0xe0f0f9);
+        ofRectRounded(helpButton, 5, 5, 5, 5);
+        
+        info = "";
+        ofSetHexColor(0x6d6a67);
+        ofDrawBitmapString(info, 67, 580);
+    }
     
-    string info =
-    "key controls\n"
-    "[b] bubbles\n"
-    "[p] poems\n"
-    "[s] squares\n"
-    "[t] toggle\n"
-    "[x] clear";
+    string up = "up";
+    string down = "down";
+    string help = "help";
     
-    ofSetHexColor(0x56534f);
-    ofDrawBitmapString(info, 67, 650);
+    ofSetHexColor(0x6d6a67);
+    ofDrawBitmapString(up, 92, 80);
+    ofDrawBitmapString(down, 186, 80);
+    ofDrawBitmapString(help, 102, 698);
     
     //ground
     box2d.drawGround();
@@ -166,6 +181,10 @@ void ofApp::mousePressed(int x, int y, int button){
     
     if (downGravityButton.inside(x, y)) {
         downGravityButtonClicked = !downGravityButtonClicked;
+    }
+    
+    if (helpButton.inside(x, y)) {
+        helpButtonClicked = !helpButtonClicked;
     }
 }
 

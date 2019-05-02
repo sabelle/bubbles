@@ -15,6 +15,7 @@ created some circles on a transparent fullscreen background
 - [x] simple movement 
 
 :sparkles: :sparkles: :sparkles: 
+
 added movement to bubbles using ofxBox2d, however bubble cannot be dragged around unless background is _not_ transparent. i set the gravity to 0 so that bubble can float freely, however the user must drag the first bubble (and subsequent bubbles if no collision occurs) to initiate movement. this obviously doesnt allow for a transparent screen, so the ofxTransparentWindow might need to go. 
 
 the bubbles always have a black line from the center to edge. tried overriding ofxBox2dCircle.draw() method to remove the line but it didn't work, so  i want to try making a custom polygon (circle). also i want to add a feature of double clicking the bubble and then it'll be deleted.
