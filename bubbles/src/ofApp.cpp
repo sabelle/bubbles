@@ -77,9 +77,9 @@ void ofApp::draw(){
         
         info =
         "key controls\n"
-        "[b] bubbles\n"
-        "[p] poems\n"
-        "[s] squares\n"
+        "[1] bubbles\n"
+        "[2] squares\n"
+        "[3] poems\n"
         "[t] toggle\n"
         "[x] clear";
         
@@ -111,7 +111,7 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    if (key == 'b') {
+    if (key == '1') {
         int randomColor = ofRandom(0, hexColors.size());
         bubbleColors.push_back(randomColor);
         
@@ -122,18 +122,18 @@ void ofApp::keyPressed(int key){
         bubble->setup(box2d.getWorld(), mouseX, mouseY, r);
     }
     
-    if (key == 'p') {
-        int randomPoem = ofRandom(0, poemCollection.size());
-        poems.push_back(randomPoem);
-        poemLocations.push_back(std::make_pair(mouseX, mouseY));
-        
-    }
-    
-    if (key == 's') {
+    if (key == '2') {
         float l = ofRandom(20, 40);
         squares.push_back(shared_ptr<ofxBox2dRect>(new ofxBox2dRect));
         squares.back().get()->setPhysics(4.0, 0.6, 0.5);
         squares.back().get()->setup(box2d.getWorld(), mouseX, mouseY, l, l);
+    }
+    
+    if (key == '3') {
+        int randomPoem = ofRandom(0, poemCollection.size());
+        poems.push_back(randomPoem);
+        poemLocations.push_back(std::make_pair(mouseX, mouseY));
+        
     }
     
     if (key == 't') {

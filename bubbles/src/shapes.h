@@ -28,7 +28,7 @@ public:
     }
 };
 
-class star{
+class star: public ofxBox2dRect {
 private:
     std::vector<float> starVertices {
         0.00,  2.01,
@@ -46,6 +46,8 @@ private:
 public:
     //http://www.iforce2d.net/b2dtut/drawing-objects
     void render() {
+        glColor3f(224, 186, 242);
+        
         glBegin(GL_LINES);
         glVertex2f( 0.00,  2.01);
         glVertex2f( 0.58,  0.81);
@@ -58,6 +60,12 @@ public:
         glVertex2f(-1.91, -0.62);
         glVertex2f(-0.58,  0.81);
         glEnd();
+    }
+    void draw() {
+        glPushMatrix();
+        glTranslatef(getPosition().x, getPosition().y, 0);
+        render();
+        glPopMatrix();
     }
 };
 

@@ -45,7 +45,7 @@ private:
         "yes is a world\n"
         "& in this world of\n"
         "yes live\n"
-        "(skilfully curled)\n"
+        "(skillfully curled)\n"
         "all worlds",
         
         "a total stranger one black day\n"
