@@ -2,21 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxBox2d.h"
-
-class Bubble : public ofxBox2dCircle {
-    
-public:
-    Bubble() {
-    }
-    //ofColor color;
-    void draw() {
-        float radius = getRadius();        
-        glPushMatrix();
-        glTranslatef(getPosition().x, getPosition().y, 0);
-        ofDrawCircle(0, 0, radius);
-        glPopMatrix();
-    }
-};
+#include "shapes.h"
 
 class ofApp : public ofBaseApp {
     
@@ -40,7 +26,7 @@ public:
 private:
     ofxBox2d box2d; //box2d world
     std::vector<shared_ptr<ofxBox2dRect> > squares;
-    std::vector<shared_ptr<Bubble> > bubbles;
+    std::vector<shared_ptr<bubble> > bubbles;
     std::vector<int> bubbleColors;
     std::vector<int> poems;
     std::vector<std::pair<int, int> > poemLocations;

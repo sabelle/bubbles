@@ -159,6 +159,7 @@
 		AF2D24A04DB767E647D33762 /* b2Contact.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = b2Contact.cpp; path = "../../openframeworks/addons/ofxBox2d-master/libs/Box2D/Dynamics/Contacts/b2Contact.cpp"; sourceTree = SOURCE_ROOT; };
 		B0F0A1952BCD388287796AF8 /* b2PolygonShape.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = b2PolygonShape.h; path = "../../openframeworks/addons/ofxBox2d-master/libs/Box2D/Collision/Shapes/b2PolygonShape.h"; sourceTree = SOURCE_ROOT; };
 		B15DE4DE6251F4EBA7B6D341 /* b2PulleyJoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = b2PulleyJoint.h; path = "../../openframeworks/addons/ofxBox2d-master/libs/Box2D/Dynamics/Joints/b2PulleyJoint.h"; sourceTree = SOURCE_ROOT; };
+		B36504FB227A7F2F008ACF8F /* shapes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shapes.h; sourceTree = "<group>"; };
 		B3CE14A12272E41E0021B7E0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B3CE14A22272E41F0021B7E0 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofApp.h; sourceTree = "<group>"; };
 		B3CE14A32272E41F0021B7E0 /* ofApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofApp.cpp; sourceTree = "<group>"; };
@@ -895,6 +896,7 @@
 				B3CE14A12272E41E0021B7E0 /* main.cpp */,
 				B3CE14A32272E41F0021B7E0 /* ofApp.cpp */,
 				B3CE14A22272E41F0021B7E0 /* ofApp.h */,
+				B36504FB227A7F2F008ACF8F /* shapes.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;

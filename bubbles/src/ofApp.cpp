@@ -19,19 +19,6 @@ void ofApp::setup(){
     upGravityButtonClicked = false;
     downGravityButtonClicked = false;
     helpButtonClicked = false;
-    
-//    local shape = b2.PolygonShape.new()
-//    starFixtureProperties @ |shape = shape, density = 1, restitution = 0.5, friction = 1|
-//    shape:set(29,0, 39,16, 19,16)
-//    body:createFixture{starFixtureProperties}
-//    shape:set(56,20, 43,33, 39,16)
-//    body:createFixture{starFixtureProperties}
-//    shape:set(46,52, 28,44, 43,33)
-//    body:createFixture{starFixtureProperties}
-//    shape:set(11,52, 14,33, 28,44)
-//    body:createFixture{starFixtureProperties}
-//    shape:set(0,19, 19,16, 14,33)
-//    body:createFixture{starFixtureProperties}
 }
 
 //--------------------------------------------------------------
@@ -129,8 +116,8 @@ void ofApp::keyPressed(int key){
         bubbleColors.push_back(randomColor);
         
         float r = ofRandom(40, 60);
-        bubbles.push_back(shared_ptr<Bubble>(new Bubble));
-        Bubble *bubble = bubbles.back().get();
+        bubbles.push_back(shared_ptr<bubble>(new bubble));
+        bubble *bubble = bubbles.back().get();
         bubble->setPhysics(2.0, 0.6, 0);
         bubble->setup(box2d.getWorld(), mouseX, mouseY, r);
     }
