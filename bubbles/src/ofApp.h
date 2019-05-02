@@ -3,10 +3,10 @@
 #include "ofMain.h"
 #include "ofxBox2d.h"
 
-class CustomParticle : public ofxBox2dCircle {
+class Bubble : public ofxBox2dCircle {
     
 public:
-    CustomParticle() {
+    Bubble() {
     }
     //ofColor color;
     void draw() {
@@ -38,13 +38,10 @@ public:
     void gotMessage(ofMessage msg);
     
 private:
-    int count;
-    int currentX;
-    int currentY;
-    
     ofxBox2d box2d; //box2d world
     std::vector<shared_ptr<ofxBox2dRect> > squares;
-    std::vector<shared_ptr<CustomParticle> > bubbles;
+    std::vector<shared_ptr<Bubble> > bubbles;
+    std::vector<int> bubbleColors;
     std::vector<int> poems;
     std::vector<std::pair<int, int> > poemLocations;
     std::vector<unsigned> hexColors {0xebdcf2, 0xf4df8b, 0xbbf7e3};

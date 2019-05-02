@@ -19,6 +19,19 @@ void ofApp::setup(){
     upGravityButtonClicked = false;
     downGravityButtonClicked = false;
     helpButtonClicked = false;
+    
+//    local shape = b2.PolygonShape.new()
+//    starFixtureProperties @ |shape = shape, density = 1, restitution = 0.5, friction = 1|
+//    shape:set(29,0, 39,16, 19,16)
+//    body:createFixture{starFixtureProperties}
+//    shape:set(56,20, 43,33, 39,16)
+//    body:createFixture{starFixtureProperties}
+//    shape:set(46,52, 28,44, 43,33)
+//    body:createFixture{starFixtureProperties}
+//    shape:set(11,52, 14,33, 28,44)
+//    body:createFixture{starFixtureProperties}
+//    shape:set(0,19, 19,16, 14,33)
+//    body:createFixture{starFixtureProperties}
 }
 
 //--------------------------------------------------------------
@@ -42,8 +55,7 @@ void ofApp::update(){
 void ofApp::draw(){
     //shapes
     for (int i = 0; i < bubbles.size(); i++) {
-        count++;
-        ofSetHexColor(hexColors[count % hexColors.size()]);
+        ofSetHexColor(hexColors[bubbleColors[i]]);
         ofFill();
         bubbles[i].get()->draw();
     }
@@ -113,23 +125,14 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     if (key == 'b') {
-        float r = ofRandom(40, 60);
-        bubbles.push_back(shared_ptr<CustomParticle>(new CustomParticle));
-        CustomParticle *bubbleParticle = bubbles.back().get();
-        bubbleParticle->setPhysics(2.0, 0.6, 0);
-        bubbleParticle->setup(box2d.getWorld(), mouseX, mouseY, r);
+        int randomColor = ofRandom(0, hexColors.size());
+        bubbleColors.push_back(randomColor);
         
-        r = ofRandom(40, 60);
-        bubbles.push_back(shared_ptr<CustomParticle>(new CustomParticle));
-        bubbleParticle = bubbles.back().get();
-        bubbleParticle->setPhysics(2.0, 0.6, 0);
-        bubbleParticle->setup(box2d.getWorld(), mouseX, mouseY, r);
-
-        r = ofRandom(40, 60);
-        bubbles.push_back(shared_ptr<CustomParticle>(new CustomParticle));
-        bubbleParticle = bubbles.back().get();
-        bubbleParticle->setPhysics(2.0, 0.6, 0);
-        bubbleParticle->setup(box2d.getWorld(), mouseX, mouseY, r);
+        float r = ofRandom(40, 60);
+        bubbles.push_back(shared_ptr<Bubble>(new Bubble));
+        Bubble *bubble = bubbles.back().get();
+        bubble->setPhysics(2.0, 0.6, 0);
+        bubble->setup(box2d.getWorld(), mouseX, mouseY, r);
     }
     
     if (key == 'p') {

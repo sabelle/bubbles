@@ -36,4 +36,4 @@ each call to add a bubble adds 3 different colored bubbles at once -> had an iss
 
 :sparkles: :sparkles: :sparkles: 
 
-removed black line on the bubbles by creating custom shape (custom particle). labeled buttons and added a new shape, squares. i chose to add poems as text! these are all poems by e. e. cummings, my favorite poet. added a clear screen functionality.
+removed black line on the bubbles by creating custom shape (custom particle). circles can be added one by one, (random colors too!) now. i also labeled the buttons and added a new shape, squares. i chose to add poems as text! these are all poems by e. e. cummings, my favorite poet. added a clear screen functionality. additionally, the legend is hidden by a help button. pressing it will reveal the legend and pressing the help button again will make it disappear. :)
