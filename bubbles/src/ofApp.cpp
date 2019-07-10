@@ -25,7 +25,7 @@ void ofApp::setup(){
 void ofApp::update(){
     box2d.update();
     
-    if (upGravityButtonClicked){
+    if (upGravityButtonClicked) {
         downGravityButtonClicked = false;
         box2d.setGravity(0, -5);
     } else if (downGravityButtonClicked) {
@@ -51,6 +51,12 @@ void ofApp::draw(){
         ofSetHexColor(0xcdd4d8);
         ofFill();
         squares[i].get()->draw();
+    }
+    
+    for (int i = 0; i < stars.size(); i++) {
+        ofSetHexColor(0xe0baf2);
+        ofFill();
+        stars[i].get()->draw();
     }
     
     for (int i = 0; i < poems.size(); i++) {
@@ -133,7 +139,12 @@ void ofApp::keyPressed(int key){
         int randomPoem = ofRandom(0, poemCollection.size());
         poems.push_back(randomPoem);
         poemLocations.push_back(std::make_pair(mouseX, mouseY));
-        
+    }
+    
+    if (key == '4') {
+        stars.push_back(shared_ptr<star>(new star));
+        stars.back().get()->setPhysics(1.5, 0.25, 0.1);
+        stars.back().get()->setup(box2d.getWorld(), mouseX, mouseY);
     }
     
     if (key == 't') {

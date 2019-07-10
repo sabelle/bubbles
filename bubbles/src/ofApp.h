@@ -25,10 +25,11 @@ public:
     
 private:
     ofxBox2d box2d; //box2d world
-    std::vector<shared_ptr<ofxBox2dRect> > squares;
     std::vector<shared_ptr<bubble> > bubbles;
-    std::vector<int> bubbleColors;
+    std::vector<shared_ptr<ofxBox2dRect> > squares;
+    std::vector<shared_ptr<star> > stars;
     std::vector<int> poems;
+    std::vector<int> bubbleColors;
     std::vector<std::pair<int, int> > poemLocations;
     std::vector<unsigned> hexColors {0xebdcf2, 0xf4df8b, 0xbbf7e3};
     std::vector<string> poemCollection {
